@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: real-estate-be
+  ai:
+    openai:
+      chat:
+        base-url: https://api.openai.com
+        api-key: ${OPENAI_API_KEY}
+        options:
+          model: gpt-4o
+      base-url: https://api.openai.com
+      api-key: ${OPENAI_API_KEY}
+      embedding:
+        options:
+          model: text-embedding-nomic-embed-text-v2-moe
+          dimensions: 768
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vector_db
+    username: postgres
+    driver-class-name: org.postgresql.Driver
+#    ollama:
+#      chat:
+#        model: llama3.2
+#      embedding:
+#        model: nomic-embed-text
+#      base-url: http://localhost:11434
+#    vectorstore:
+#      redis:
+#        index-name: real-estate-embeddings
+#        initialize-schema: true
+#  data:
+#    redis:
+#      host: ${REDIS_HOST}
+#      port: ${REDIS_PORT}
+#      username: ${REDIS_USERNAME}
+#      password: ${REDIS_PASSWORD}
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+        ai: DEBUG
+#langchain4j:
+#  ollama:
+#    chat-model:
+#      base-url: http://localhost:11434
+#      model-name: llama3.2
+#    embedding-model:
+#      model-name: nomic-embed-text
+#      base-url: http://localhost:11434
+#  community:
+#    redis:
+#      host: ${REDIS_HOST}
+#      port: ${REDIS_PORT}
+#      user: ${REDIS_USERNAME}
+#      password: ${REDIS_PASSWORD}
+#      index-name: real-estate-embeddings
+
