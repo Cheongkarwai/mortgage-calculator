@@ -4,16 +4,12 @@ spring:
   ai:
     openai:
       chat:
-        base-url: https://api.openai.com
+        base-url: ${OPENAI_BASE_URL}
         api-key: ${OPENAI_API_KEY}
         options:
           model: gpt-4o
-      base-url: https://api.openai.com
+      base-url: ${OPENAI_BASE_URL}
       api-key: ${OPENAI_API_KEY}
-      embedding:
-        options:
-          model: text-embedding-nomic-embed-text-v2-moe
-          dimensions: 768
 logging:
   level:
     org:
